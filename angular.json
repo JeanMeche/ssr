@@ -34,10 +34,10 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            }
+            }, 
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -58,7 +58,10 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": {
+                "scripts": true,
+                "vendor": true
+              }
             }
           },
           "defaultConfiguration": "production"
@@ -101,6 +104,12 @@
           }
         }
       }
+    }
+  },
+  "cli": {
+    "analytics": "f71f2a91-941e-4225-8058-aadb71570618",
+    "cache": {
+      "enabled": false
     }
   }
 }
