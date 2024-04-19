@@ -23,30 +23,15 @@
             "outputPath": "dist/test-landing/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest",
-              "src/robots.txt"
-            ],
-            "styles": [
-              "src/styles.scss",
-              "./node_modules/animate.css/animate.min.css",
-              "./node_modules/quill/dist/quill.snow.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "",
-                "./src/styles"
-              ]
+              "includePaths": ["", "./src/styles"]
             },
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -66,24 +51,9 @@
                   "maximumError": "1mb"
                 }
               ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [],
               "outputHashing": "all",
-              "assets": [
-                "src/favicon.ico",
-                "src/assets",
-                "src/manifest.webmanifest",
-                {
-                  "glob": "robots.txt",
-                  "input": "src/robots/prod",
-                  "output": "/"
-                },
-                "src/market.json"
-              ]
+              "assets": ["src/favicon.ico", "src/assets"]
             },
             "development": {
               "index": {
@@ -95,23 +65,8 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.test.ts"
-                }
-              ],
-              "assets": [
-                "src/favicon.ico",
-                "src/assets",
-                "src/manifest.webmanifest",
-                {
-                  "glob": "robots.txt",
-                  "input": "src/robots/dev",
-                  "output": "/"
-                },
-                "src/market.json"
-              ]
+              "fileReplacements": [],
+              "assets": []
             },
             "local": {
               "buildOptimizer": false,
@@ -119,12 +74,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,
-              "assets": [
-                "src/favicon.ico",
-                "src/assets",
-                "src/manifest.webmanifest",
-                "src/market.json"
-              ]
+              "assets": []
             }
           },
           "defaultConfiguration": "production"
@@ -154,32 +104,15 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest",
-              "src/robots.txt",
-              "src/market.json"
-            ],
-            "styles": [
-              "src/styles.scss",
-              "./node_modules/animate.css/animate.min.css",
-              "./node_modules/quill/dist/quill.snow.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "",
-                "./src/styles"
-              ]
+              "includePaths": ["", "./src/styles"]
             },
-            "scripts": [
-            ]
+            "scripts": []
           }
         },
         "server": {
@@ -189,34 +122,21 @@
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "",
-                "./src/styles"
-              ]
+              "includePaths": ["", "./src/styles"]
             },
             "inlineStyleLanguage": "scss"
           },
           "configurations": {
             "production": {
               "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": []
             },
             "development": {
               "optimization": false,
               "sourceMap": false,
               "extractLicenses": false,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.test.ts"
-                }
-              ]
-            }, ,
+              "fileReplacements": []
+            },
             "local": {
               "optimization": false,
               "sourceMap": true,
@@ -243,29 +163,6 @@
             }
           },
           "defaultConfiguration": "local"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "test-landing:build:production",
-              "serverTarget": "test-landing:server:production"
-            },
-            "development": {
-              "browserTarget": "test-landing:build:development",
-              "serverTarget": "test-landing:server:development"
-            },
-            "local": {
-              "browserTarget": "test-landing:build:local",
-              "serverTarget": "test-landing:server:local"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

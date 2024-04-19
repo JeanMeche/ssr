@@ -1,9 +1,0 @@
-{
-  "actions": {
-    "close": "Close",
-    "demo_action": "Request Demo",
-    "send_request": "Send the request",
-    "find_out_more": "Find out more",
-    "check": "Check it out"
-  }
-}
